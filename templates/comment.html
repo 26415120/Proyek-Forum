@@ -71,10 +71,13 @@ float: right;
 <div class='row'>
 {% for row in rows %}
 <div class="col-sm-6 card">
-  <table>
+  <table class="table-hover">
   <tr>
       <th>Username</th>
      <th>Comment</th>
+    {% if session.id == 1 %}
+    <th></th>
+    {% endif %}
   </tr>
   <tr>
      <td><{{url_for('comment',id=row[0])}}>{{row[3]}}</td>
