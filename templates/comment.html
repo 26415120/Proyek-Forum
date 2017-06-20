@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>testing</title>
+  <title>comm</title>
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -55,11 +55,9 @@ float: right;
         <li><a><font color="white"><marquee behavior="scroll" direction="left">{{ session.email }}</marquee></font></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{url_for('insert')}}"><span class="glyphicon glyphicon-heart"></span> Make New Thread</a></li>
         {% else %}
         <li><a href="{{url_for('register')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="{{url_for('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        
       {% endif %}
       </ul>
     </div>
@@ -75,18 +73,17 @@ float: right;
   <tr>
       <th>Username</th>
      <th>Comment</th>
-    {% if session.id == 1 %}
-    <th></th>
-    {% endif %}
+{% if session.id == 1 %}
+     <th></th>
+{% endif %}
   </tr>
   <tr>
-     <td><{{url_for('comment',id=row[0])}}>{{row[3]}}</td>
-     <td><{{url_for('home',id=row[0])}}>{{row[1]}}</td>         
+     <td><{{url_for('comment',id=row[0])}}>{{row[1]}}</td>
+     <td><{{url_for('home',id=row[0])}}>{{row[4]}}</td>
      {% if session.id == 1 %}
      <td><a href="{{url_for('deletecomm',commentId=row[0])}}" class="btn btn-danger">Delete</a></td>
-     {% endif %}     
-    </div>      
-       
+     {% endif %}         
+      </div>      
 {% endfor %}
 </div>
 </div>
