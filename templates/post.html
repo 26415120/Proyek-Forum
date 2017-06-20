@@ -47,8 +47,10 @@ float: right;
 <h1>{{row[1]}}</h1>
 <p>{{row[2]}}</p>
 <br>
-<div class="container">
-<h1>Login!</h1>
+{% if session.email %}
+<div class="container" id="manipulate">
+<div class="col-sm-15" >
+<h1>Add Comment</h1>
 <form action="{{url_for('add_comment',userid=session.id)}}" method="post" class="form-group">
   <div class="form-group">
     <label for="Comment">Comment:</label>
