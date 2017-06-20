@@ -109,7 +109,7 @@ def comment():
    con.row_factory = sql.Row
 
    cur = con.cursor()
-   cur.execute("SELECT * FROM comment")
+   cur.execute("SELECT * FROM users JOIN comment on users.userId = comment.userId")
    rows = cur.fetchall()
    con.close()
    return render_template('comment.html',rows=rows)
