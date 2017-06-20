@@ -82,7 +82,10 @@ float: right;
   <tr>
      <td><{{url_for('comment',id=row[0])}}>{{row[3]}}</td>
      <td><{{url_for('home',id=row[0])}}>{{row[1]}}</td>         
-      </div>      
+     {% if session.id == 1 %}
+     <td><a href="{{url_for('deletecomm',commentId=row[0])}}" class="btn btn-danger">Delete</a></td>
+     {% endif %}     
+    </div>      
        
 {% endfor %}
 </div>
