@@ -33,7 +33,7 @@ tr:nth-child(even) {
 li{
 float: right;
 }
-  #manipulate
+#manipulate
 {
   position:absolute;
   width:300px;
@@ -50,11 +50,11 @@ float: right;
 {% if session.email %}
 <div class="container" id="manipulate">
 <div class="col-sm-15" >
-<h1>Add Comment</h1>
-<form action="{{url_for('add_comment',userid=session.id)}}" method="post" class="form-group">
+<h1>Login!</h1>
+<form action="{{url_for('add_comment',userid=session.id)}}" method="post" class="form-group" id="test">
   <div class="form-group">
     <label for="Comment">Comment:</label>
- <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+    <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
   </div>
     <button type="submit" class="btn btn-primary" name="add_comment">Add Comment</button>
 {% if session.id == 1 %}
@@ -63,7 +63,6 @@ float: right;
 </div>
 </form>
 {% endif %}
-
-</form>
 </body>
+</script>
 </html>
