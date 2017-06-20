@@ -143,6 +143,18 @@ def delete(threadId):
    con.close()
    return redirect(url_for('home'))
 
+@app.route('/deletecomm/<commentId>')
+def deletecomm(commentId):
+   
+   con = sql.connect("database.db")
+   con.row_factory = sql.Row
+   cur = con.cursor()
+
+   cur.execute("DELETE FROM comment where commentId= ?", (commentId))
+   con.commit()
+   con.close()
+   return redirect(url_for('comment'))
+
 
 if __name__ == '__main__':
    app.debug= True
