@@ -33,6 +33,12 @@ tr:nth-child(even) {
 li{
 float: right;
 }
+  #manipulate
+{
+  position:absolute;
+  width:300px;
+  height: 200px;
+}
 </style>
 </head>
 <body>
@@ -40,7 +46,7 @@ float: right;
 <div class="col-sm-7">
 <h1>{{row[1]}}</h1>
 <p>{{row[2]}}</p>
-<center>
+<br>
 <div class="container">
 <h1>Login!</h1>
 <form action="{{url_for('add_comment',userid=session.id)}}" method="post" class="form-group">
